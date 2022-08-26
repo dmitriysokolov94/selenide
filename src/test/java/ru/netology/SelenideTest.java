@@ -23,7 +23,7 @@ public class SelenideTest {
 
     @BeforeEach
     void open() {
-        Selenide.open("http://localhost:9999");
+        Selenide.open("http://localhost:9999/");
     }
 
     public String getDate() {
@@ -48,7 +48,7 @@ public class SelenideTest {
         $("[data-test-id=phone] .input__control").setValue("+79997894564");
         $("[data-test-id=agreement]").click();
         $x("//button[contains(@class, 'button_view_extra')]").click();
-        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(10));
         $("[data-test-id=notification] [class='notification__content']").shouldHave(exactText("Встреча успешно забронирована на " + getDate()));
     }
 }
