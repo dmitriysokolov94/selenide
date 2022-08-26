@@ -23,7 +23,7 @@ public class SelenideTest {
 
     @BeforeEach
     void open() {
-        Selenide.open("http://localhost:9999/");
+        Selenide.open("http://localhost:9999");
     }
 
     public String getDate() {
@@ -35,7 +35,7 @@ public class SelenideTest {
 
 
     @Test
-   void test1() {
+    void test1() {
 
         Configuration.holdBrowserOpen = true;
 
