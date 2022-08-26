@@ -29,7 +29,7 @@ public class SelenideTest {
     public String getDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         Calendar calendar = new GregorianCalendar();
-        calendar.add(Calendar.DAY_OF_MONTH, +7);
+        calendar.add(Calendar.DAY_OF_MONTH, +4);
         return dateFormat.format(calendar.getTime());
     }
 
@@ -48,7 +48,7 @@ public class SelenideTest {
         $("[data-test-id=phone] .input__control").setValue("+79997894564");
         $("[data-test-id=agreement]").click();
         $x("//button[contains(@class, 'button_view_extra')]").click();
-        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(10));
+        $("[data-test-id=notification]").shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id=notification] [class='notification__content']").shouldHave(exactText("Встреча успешно забронирована на " + getDate()));
     }
 }
